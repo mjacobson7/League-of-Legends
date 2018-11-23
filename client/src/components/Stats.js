@@ -13,8 +13,8 @@ const Stats = ({ matchData }) => {
             return <li key={rune.id}>{rune.name}</li>
         })
 
-        const itemsPurchased = matchData.itemsPurchased.map(item => {
-            return <li key={item.id}>{item.name}</li>
+        const itemsPurchased = matchData.itemsPurchased.map((item, i) => {
+            return <li key={i}>{item.name}</li>
         })
 
 

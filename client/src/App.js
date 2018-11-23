@@ -20,6 +20,7 @@ class App extends Component {
 
   searchSummonerHandler = async () => {
     try {
+      this.setState({ matchData: null })
       const summoner = await axios.get('/getSummonerByName/' + this.state.searchVal)
       const matches = await axios.get('/getSummonerMatches/' + summoner.data.accountId);
       this.setState({ summoner: summoner.data, matches: matches.data, error: false })
@@ -32,7 +33,6 @@ class App extends Component {
 
   matchSelectHandler = async (event) => {
     const match = await axios.get('/getMatchById/' + event.target.value + '/' + this.state.summoner.accountId);
-    console.log(match);
     this.setState({ matchData: match.data })
   }
 
