@@ -4,9 +4,9 @@ const summoner = require('./static/summoner.json');
 const runeData = require('./static/runes.json');
 
 
-const LeagueJs = require('leaguejs');
 const { API_KEY, PLATFORM_ID } = require('./config');
 
+const LeagueJs = require('leaguejs');
 const leagueJs = new LeagueJs(API_KEY, { PLATFORM_ID });
 
 
